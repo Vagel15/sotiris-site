@@ -11,6 +11,14 @@ body{margin:0}
 a{color:inherit;text-decoration:none}
 a:hover{opacity:.75}
 input::placeholder{color:#D4AF5F;opacity:1}
+@media (max-width:760px){
+.site-header{padding:0 12px !important}
+.hdr-inner{flex-wrap:nowrap !important;gap:8px !important;min-height:64px !important;padding:8px 0 !important}
+.hdr-cat{padding:0 10px !important}
+.hdr-cat-label,.hdr-search{display:none !important}
+.hdr-circle{top:4px !important}
+.hdr-right{gap:4px !important}
+}
 </style>
 </head>
 <body>
@@ -21,18 +29,24 @@ input::placeholder{color:#D4AF5F;opacity:1}
 <a href="#" style="display: flex; align-items: center; gap: 8px; min-height: 28px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8923A" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg>Ελληνικά</a>
 </div>
 
-<header style="background: #000000; padding: 0 32px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; max-width: 1360px; margin: 0 auto; min-height: 80px; padding: 12px 0">
-<a href="#" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 20px; border-radius: 10px; background: linear-gradient(#F4D983, #D4AF5F); color: #000000; font-size: 18px; font-weight: 600">
-<svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#000000" stroke-width="3" aria-hidden="true"><path d="M2 6h24M2 14h24M2 22h24"/></svg>Κατηγορίες</a>
-
-<a href="#" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; width: 120px; height: 120px; border-radius: 60px; background: #000000; margin-bottom: -44px; position: relative; z-index: 2">
-<img src="images/logo.png" alt="SH monogram" style="height: 52px; width: auto; display: block">
-<span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; line-height: 1.2; text-align: center; color: #D4AF5F">SOTIRIS<br>HATZINIKOLAOU</span>
+<div class="logo-follow" style="position: sticky; top: 0; height: 0; z-index: 60; display: flex; justify-content: center; align-items: flex-start">
+<a href="#" class="hdr-circle" aria-label="SOTIRIS HATZINIKOLAOU" style="flex: none; position: relative; top: 8px; display: block; width: clamp(96px, 10vw, 140px); aspect-ratio: 1; border-radius: 50%; background: #000000; container-type: inline-size; box-shadow: 0 0 0 1px #3A2F18">
+<span style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding-bottom: 4cqw; box-sizing: border-box">
+<img src="images/logo.png" alt="SH monogram" style="height: 36cqw; width: auto; display: block">
+<span style="display: block; margin-top: 3cqw; padding-left: 0.1em; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 7.6cqw; font-weight: 500; letter-spacing: 0.1em; line-height: 1.15; text-align: center; white-space: nowrap; color: #D4AF5F">SOTIRIS<br>HATZINIKOLAOU</span>
+</span>
 </a>
+</div>
 
-<div style="display: flex; align-items: center; gap: 20px">
-<div style="display: flex; align-items: center; border: 1.5px solid #D4AF5F; border-radius: 22px; padding-left: 14px; min-height: 40px">
+<header class="site-header" style="background: #000000; padding: 0 32px">
+<div class="hdr-inner" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; max-width: 1360px; margin: 0 auto; min-height: 80px; padding: 12px 0">
+<a href="#" class="hdr-cat" aria-label="Κατηγορίες" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 20px; border-radius: 10px; background: linear-gradient(#F4D983, #D4AF5F); color: #000000; font-size: 18px; font-weight: 600">
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#000000" stroke-width="3" aria-hidden="true"><path d="M2 6h24M2 14h24M2 22h24"/></svg><span class="hdr-cat-label">Κατηγορίες</span></a>
+
+
+
+<div class="hdr-right" style="display: flex; align-items: center; gap: 20px">
+<div class="hdr-search" style="display: flex; align-items: center; border: 1.5px solid #D4AF5F; border-radius: 22px; padding-left: 14px; min-height: 40px">
 <input type="text" placeholder="Αναζήτηση προιόντων..." aria-label="Αναζήτηση προιόντων" style="background: transparent; border: 0; outline: 0; color: #D4AF5F; font-family: inherit; font-size: 13px; font-weight: 600; width: 130px; min-height: 36px">
 <span style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-left: 1.5px solid #D4AF5F"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF5F" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></svg></span>
 </div>
