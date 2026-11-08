@@ -11,35 +11,31 @@ body{margin:0}
 a{color:inherit;text-decoration:none}
 a:hover{opacity:.75}
 input::placeholder{color:#D4AF5F;opacity:1}
+@media (max-width:900px){
+.hdr-search{display:none !important}
+}
 @media (max-width:760px){
-.site-header{padding:0 12px !important}
-.hdr-inner{flex-wrap:nowrap !important;gap:8px !important;min-height:64px !important;padding:8px 0 !important}
+.strip,.site-header{padding:0 12px !important}
+.strip{justify-content:flex-end !important}
+.ship-desktop{display:none !important}
+.ship-mobile{display:block !important}
 .hdr-cat{padding:0 10px !important}
-.hdr-cat-label,.hdr-search{display:none !important}
-.hdr-circle{top:4px !important}
+.hdr-cat-label{display:none !important}
 .hdr-right{gap:4px !important}
 }
 </style>
 </head>
 <body>
-<div style="min-height: 100vh; box-sizing: border-box; background: #FFFFFF; color: #000000; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.5; display: flex; flex-direction: column">
+<div style="--d: clamp(96px, 10vw, 140px); min-height: 100vh; box-sizing: border-box; background: #FFFFFF; color: #000000; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.5; display: flex; flex-direction: column">
 
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 24px; padding: 4px 32px; font-size: 13px; font-weight: 600">
-<span style="flex: 1 1 200px; text-align: center">Δωρεάν Μεταφορικά πάνω απο 65 €</span>
-<a href="#" style="display: flex; align-items: center; gap: 8px; min-height: 28px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8923A" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg>Ελληνικά</a>
+<div class="top-sticky" style="position: sticky; top: 0; z-index: 60">
+<div class="strip" style="height: calc(var(--d) * 0.25); box-sizing: border-box; background: #FFFFFF; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 32px; font-size: 13px; font-weight: 600; line-height: 1.2">
+<span class="ship-desktop">Δωρεάν Μεταφορικά πάνω απο 65 €</span>
+<a href="#" style="display: flex; align-items: center; gap: 8px; height: 100%"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8923A" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg>Ελληνικά</a>
 </div>
 
-<div class="logo-follow" style="position: sticky; top: 0; height: 0; z-index: 60; display: flex; justify-content: center; align-items: flex-start">
-<a href="#" class="hdr-circle" aria-label="SOTIRIS HATZINIKOLAOU" style="flex: none; position: relative; top: 8px; display: block; width: clamp(96px, 10vw, 140px); aspect-ratio: 1; border-radius: 50%; background: #000000; container-type: inline-size; box-shadow: 0 0 0 1px #3A2F18">
-<span style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding-bottom: 4cqw; box-sizing: border-box">
-<img src="images/logo.png" alt="SH monogram" style="height: 36cqw; width: auto; display: block">
-<span style="display: block; margin-top: 3cqw; padding-left: 0.1em; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 7.6cqw; font-weight: 500; letter-spacing: 0.1em; line-height: 1.15; text-align: center; white-space: nowrap; color: #D4AF5F">SOTIRIS<br>HATZINIKOLAOU</span>
-</span>
-</a>
-</div>
-
-<header class="site-header" style="background: #000000; padding: 0 32px">
-<div class="hdr-inner" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; max-width: 1360px; margin: 0 auto; min-height: 80px; padding: 12px 0">
+<header class="site-header" style="background: #000000; padding: 0 32px; height: calc(var(--d) * 0.5); box-sizing: border-box">
+<div class="hdr-inner" style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 12px 24px; max-width: 1360px; margin: 0 auto; height: 100%">
 <a href="#" class="hdr-cat" aria-label="Κατηγορίες" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 20px; border-radius: 10px; background: linear-gradient(#F4D983, #D4AF5F); color: #000000; font-size: 18px; font-weight: 600">
 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#000000" stroke-width="3" aria-hidden="true"><path d="M2 6h24M2 14h24M2 22h24"/></svg><span class="hdr-cat-label">Κατηγορίες</span></a>
 
@@ -56,6 +52,14 @@ input::placeholder{color:#D4AF5F;opacity:1}
 </div>
 </div>
 </header>
+<a href="#" class="hdr-circle" aria-label="SOTIRIS HATZINIKOLAOU" style="position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 2; display: block; width: var(--d); aspect-ratio: 1; border-radius: 50%; background: #000000; container-type: inline-size">
+<span style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; padding-bottom: 4cqw; box-sizing: border-box">
+<img src="images/logo.png" alt="SH monogram" style="height: 36cqw; width: auto; display: block">
+<span style="display: block; margin-top: 3cqw; padding-left: 0.1em; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 7.6cqw; font-weight: 500; letter-spacing: 0.1em; line-height: 1.15; text-align: center; white-space: nowrap; color: #D4AF5F">SOTIRIS<br>HATZINIKOLAOU</span>
+</span>
+</a>
+</div>
+<div class="ship-mobile" style="display: none; background: #FFFFFF; text-align: center; font-size: 13px; font-weight: 600; padding: calc(var(--d) * 0.25 + 6px) 12px 6px">Δωρεάν Μεταφορικά πάνω απο 65 €</div>
 
 <main style="flex: 1 1 auto; width: 100%; max-width: 1360px; margin: 0 auto; padding: 72px 32px 96px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
 
