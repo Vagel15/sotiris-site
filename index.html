@@ -9,9 +9,9 @@
 <style>
 body{margin:0}
 a{color:inherit;text-decoration:none}
-a:hover{opacity:.75}
+a:not(.hdr-circle):hover{opacity:.75}
 input::placeholder{color:#D4AF5F;opacity:1}
-@media (max-width:900px){
+@media (max-width:1100px){
 .hdr-search{display:none !important}
 }
 @media (max-width:760px){
@@ -22,19 +22,20 @@ input::placeholder{color:#D4AF5F;opacity:1}
 .hdr-cat{padding:0 10px !important}
 .hdr-cat-label{display:none !important}
 .hdr-right{gap:4px !important}
+.page-root{--d:110px !important;--h:64px !important}
 }
 </style>
 </head>
 <body>
-<div style="--d: clamp(100px, 11vw, 160px); min-height: 100vh; box-sizing: border-box; background: #FFFFFF; color: #000000; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.5; display: flex; flex-direction: column">
+<div class="page-root" style="--d: 200px; --h: 125px; min-height: 100vh; box-sizing: border-box; background: #FFFFFF; color: #000000; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.5; display: flex; flex-direction: column">
 
 <div class="top-sticky" style="position: sticky; top: 0; z-index: 60">
-<div class="strip" style="height: calc(var(--d) * 0.25); box-sizing: border-box; background: #FFFFFF; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 32px; font-size: 13px; font-weight: 600; line-height: 1.2">
+<div class="strip" style="height: calc((var(--d) - var(--h)) / 2); box-sizing: border-box; background: #FFFFFF; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 32px; font-size: 13px; font-weight: 600; line-height: 1.2">
 <span class="ship-desktop">Δωρεάν Μεταφορικά πάνω απο 65 €</span>
 <a href="#" style="display: flex; align-items: center; gap: 8px; height: 100%"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8923A" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 3 17 0 20M12 2c-3 3-3 17 0 20"/></svg>Ελληνικά</a>
 </div>
 
-<header class="site-header" style="background: #000000; padding: 0 32px; height: calc(var(--d) * 0.5); box-sizing: border-box">
+<header class="site-header" style="background: #000000; padding: 0 32px; height: var(--h); box-sizing: border-box">
 <div class="hdr-inner" style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 12px 24px; max-width: 1360px; margin: 0 auto; height: 100%">
 <a href="#" class="hdr-cat" aria-label="Κατηγορίες" style="display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 20px; border-radius: 10px; background: linear-gradient(#F4D983, #D4AF5F); color: #000000; font-size: 18px; font-weight: 600">
 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#000000" stroke-width="3" aria-hidden="true"><path d="M2 6h24M2 14h24M2 22h24"/></svg><span class="hdr-cat-label">Κατηγορίες</span></a>
@@ -43,7 +44,7 @@ input::placeholder{color:#D4AF5F;opacity:1}
 
 <div class="hdr-right" style="display: flex; align-items: center; gap: 20px">
 <div class="hdr-search" style="display: flex; align-items: center; border: 1.5px solid #D4AF5F; border-radius: 22px; padding-left: 14px; min-height: 40px">
-<input type="text" placeholder="Αναζήτηση προιόντων..." aria-label="Αναζήτηση προιόντων" style="background: transparent; border: 0; outline: 0; color: #D4AF5F; font-family: inherit; font-size: 13px; font-weight: 600; width: 130px; min-height: 36px">
+<input type="text" placeholder="Αναζήτηση προιόντων..." aria-label="Αναζήτηση προιόντων" style="background: transparent; border: 0; outline: 0; color: #D4AF5F; font-family: inherit; font-size: 13px; font-weight: 600; width: 200px; min-height: 36px">
 <span style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-left: 1.5px solid #D4AF5F"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF5F" stroke-width="2" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></svg></span>
 </div>
 <a href="#" aria-label="Καλάθι" style="display: flex; min-width: 28px; min-height: 44px; align-items: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4AF5F" stroke-width="1.8" aria-hidden="true"><path d="M4 8h16l-1.5 12h-13z"/><path d="M9 11V6a3 3 0 0 1 6 0v5"/></svg></a>
@@ -52,11 +53,11 @@ input::placeholder{color:#D4AF5F;opacity:1}
 </div>
 </div>
 </header>
-<a href="#" class="hdr-circle" aria-label="SOTIRIS HATZINIKOLAOU" style="position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 2; display: flex; align-items: center; justify-content: center; width: var(--d); aspect-ratio: 1; border-radius: 50%; background: #000000; container-type: inline-size">
-<img src="images/logo-full.png" alt="SOTIRIS HATZINIKOLAOU" style="width: 78cqw; height: auto; display: block">
+<a href="#" class="hdr-circle" aria-label="SOTIRIS HATZINIKOLAOU" style="position: absolute; left: 50%; top: 0; transform: translateX(-50%); z-index: 2; display: flex; align-items: center; justify-content: center; width: var(--d); height: var(--d); border-radius: 50%; background: #000000; container-type: inline-size">
+<img src="images/logo-eshop.png" alt="SOTIRIS HATZINIKOLAOU" style="width: 76cqw; height: auto; display: block">
 </a>
 </div>
-<div class="ship-mobile" style="display: none; background: #FFFFFF; text-align: center; font-size: 13px; font-weight: 600; padding: calc(var(--d) * 0.25 + 6px) 12px 6px">Δωρεάν Μεταφορικά πάνω απο 65 €</div>
+<div class="ship-mobile" style="display: none; background: #FFFFFF; text-align: center; font-size: 13px; font-weight: 600; padding: calc((var(--d) - var(--h)) / 2 + 6px) 12px 6px">Δωρεάν Μεταφορικά πάνω απο 65 €</div>
 
 <main style="flex: 1 1 auto; width: 100%; max-width: 1360px; margin: 0 auto; padding: 72px 32px 96px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
 
